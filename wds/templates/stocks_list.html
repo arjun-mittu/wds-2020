@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>All Available Stocks</h1>
+<div class="container-fluid">
+  
+<table class="table table-dark table-bordered table-hover">
+  <thead>
+    <th>Symbol</th>
+    <th>Company_name</th>
+    <th>Last_price</th>
+    <th>52_wk_H</th>
+    <th>52_wk_L</th>
+    <th>Market Cap</th>
+  </thead>
+
+        {% for k in tables %}
+        <tr>
+          <td>{{ k.symbol }}</td>
+          <td>{{ k.company_name }}</td>
+          <td>{{ k.last_price }}</td>
+          <td>{{ k.H_52_wk }}</td>
+          <td>{{ k.L_52_wk }}</td>
+          <td>{{ k.market_cap }}</td>
+        </tr>
+        {%endfor%}
+
+</table>
+</div>
+
+{% endblock %} 

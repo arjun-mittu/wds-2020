@@ -3,7 +3,7 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import home
-from core import views
+from . import views
 app_name="core"
 
 urlpatterns = [
@@ -12,7 +12,7 @@ urlpatterns = [
     path('userlogin/',views.user_login,name='userlogin'),
     path('userlogout/',views.userlogout,name='userlogout'),
     path('dashboard/',views.dashboard,name='dashboard'),
-    path('stocks/',views.stocks,name='stocks'),
+    path('stocks_list/',views.stocks_list,name='stocks_list'),
     path('',home,name="home"),
     
 ]
