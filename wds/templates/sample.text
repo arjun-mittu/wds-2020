@@ -1,0 +1,18 @@
+    <h1>Dashboard</h1>
+    <h2>{{ user.username }}</h2>
+    {% for dd in dashdata %}
+    <h1>User Balance {{ dd.userbalance }}</h1>
+    {% endfor %}
+
+
+
+        <div>
+      <a class="btn btn-outline-secondary" href="{% url 'core:sentreq' %}">Requests Sent</a>
+      <a class="btn btn-outline-secondary" href="{% url 'core:receivedreq' %}">Received Requests</a>
+    </div>
+    <div>
+      <a class="btn btn-outline-secondary" href="{% url 'core:createrequest' %}">Create Trade Request</a>
+    </div>
+
+    <a class="btn btn-outline-secondary" href="{% url 'core:report' %}">Report(Insider Trading)</a>
+

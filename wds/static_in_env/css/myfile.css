@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    /* background-image: url("{% static 'images-2019/bg-10.png' %}"); */
+    background-color: #000;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font: 16px/1.6 Arial, sans-serif; 
+    height: 100vh;
+}
+
+
+main{
+    margin-top: 170px;
+    display: flex;
+    height: 65vh;
+    padding-bottom: -20%;
+}
+
+/*   ---------------------------    SIDE BAR   -------------------------------- */
+.side-bar-wrapper {
+    width: 20%;
+    background: white;
+    padding: 0 10px 0 35px;
+}
+
+/*   ------------------ team info  ------------------ */
+
+.side-bar-wrapper .team-info{
+    padding-left: 3vw;
+}
+.side-bar-wrapper .team-info .team-name h2{             /*  name size */
+    font-size: 2.3rem;
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+.side-bar-wrapper .team-info .team-balance h5 {
+    font-size: 1.6em;
+    font-weight: 600;
+    
+}
+
+
+/*   ------------------ Buttons  ------------------ */
+.requestButtons{
+    margin-top: 30px;
+}
+.requestButtons .req-btn{
+    margin-bottom: 10px;
+    /* width: 100%; */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.requestButtons .req-btn:hover{
+    cursor: pointer;
+    text-align: center;
+}
+.requestButtons .req-btn a{
+    width: 100%;
+    padding: 15px 10px;
+    background: tomato;
+}
+
+
+/*   ---------------------------    table   -------------------------------- */
+
+/* overriding  */
+th, table tr:nth-of-type(2n) {
+    border: none;
+    background: none;
+}
+
+table tr:nth-of-type(2n) td{
+    border: none;
+    background: none;
+}
+
+
+.stock-table{
+    width: 50%;
+    padding-left: 10vh;
+    margin-left: 10%;
+    padding: 10px;
+    
+}
+
+.stock-table .stockTableInsider table {
+    background: transparent;
+}
+.stockTableInsider thead{
+    height: 50px;
+    background: none;
+    border: none;
+}
+
+.stockTableInsider thead th{
+    font-size: 1.7rem;
+    text-align: center;
+}
+.stockTableInsider tbody tr{
+    border-bottom: 2px solid #fff;
+    margin-bottom: 1em;
+}
+
+.stockTableInsider tbody td{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-right: 1px;
+    padding-right: 10px;
+    
+}
+
+
+@media (max-width: 425px) {
+
+    main{
+        margin-top: 50px;
+        /* display: flexbox; */
+        /* flex-direction: column-reverse; */
+        
+    }
+}
