@@ -4,92 +4,116 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- <link href="{% static '/css/css/bootstrap.min.css' %}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/myfile.css' %}">
+
+    
     <style>
-      body {
-        background-image: url("{% static 'images-2019/bg-3.jpg' %}");
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        font: 16px/1.6 Arial, sans-serif;
+      body{
+        /* background-image: url("{% static 'images-2019/bg-10.png' %}"); */
+        
       }
-    </style>
+    </style>    
   </head>
   <body>
     {% include "navbar.html" %}
-    <h1>Dashboard</h1>
-    <h2>{{ user.username }}</h2>
-    {% for dd in dashdata %}
-    <h1>User Balance {{ dd.userbalance }}</h1>
-    {% endfor %}
-    <div>
-      <a class="btn btn-outline-secondary" href="{% url 'core:sentreq' %}">Requests Sent</a>
-      <a class="btn btn-outline-secondary" href="{% url 'core:receivedreq' %}">Received Requests</a>
-    </div>
-    <div>
-      <a class="btn btn-outline-secondary" href="{% url 'core:createrequest' %}">Create Trade Request</a>
-    </div>
-    <div class="container-fluid">
-      <table class="table table-dark table-bordered table-hover">
-        <thead>
-          <th>Stock Name</th>
-          <th>Number Of Stocks</th>
-          {% comment %}
-          <th>Current Price</th>
-          {% endcomment %}
-        </thead>
-        {% comment %} {% for dd in dashdata %}
-        <tr>
-          <td>{{ dd.stock }}</td>
-          <td>{{ dd.numberofstocks }}</td>
-          <td>{{ dd.priceperstock }}</td>
-        </tr>
-        {% endfor %} {% endcomment %} {% for dd in dashdata %}
-        <tr>
-          <td>Stock1</td>
-          <td>{{dd.stock1}}</td>
-        </tr>
-        <tr>
-          <td>Stock2</td>
-          <td>{{dd.stock2}}</td>
-        </tr>
-        <tr>
-          <td>Stock3</td>
-          <td>{{dd.stock3}}</td>
-        </tr>
-        <tr>
-          <td>Stock4</td>
-          <td>{{dd.stock4}}</td>
-        </tr>
-        <tr>
-          <td>Stock5</td>
-          <td>{{dd.stock5}}</td>
-        </tr>
-        <tr>
-          <td>Stock6</td>
-          <td>{{dd.stock6}}</td>
-        </tr>
-        <tr>
-          <td>Stock7</td>
-          <td>{{dd.stock7}}</td>
-        </tr>
-        <tr>
-          <td>Stock8</td>
-          <td>{{dd.stock8}}</td>
-        </tr>
-        <tr>
-          <td>Stock9</td>
-          <td>{{dd.stock9}}</td>
-        </tr>
-        <tr>
-          <td>Stock10</td>
-          <td>{{dd.stock10}}</td>
-        </tr>
-        {% endfor %}
-      </table>
-    </div>
-    <a class="btn btn-outline-secondary" href="{% url 'core:report' %}">Report(Insider Trading)</a>
 
+    <main class="mainpage">
+
+      
+      <div class="side-bar-wrapper">
+          
+            <div class="team-info">
+              <div class="team-name"><h2>{{ user.username }}</h2></div>
+              <div class="team-balance">    
+                {% for dd in dashdata %}
+                <h5>Team Balance {{ dd.userbalance }}</h5>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="requestButtons">
+              <div class="req-btn"><a class="btn-insider" href="{% url 'core:sentreq' %}">Requests Sent</a></div>
+              <div class="req-btn"><a class="btn-insider" href="{% url 'core:receivedreq' %}">Received Requests</a></div>
+              <div class="req-btn"><a class="btn-insider" href="{% url 'core:createrequest' %}">Create Trade Request</a></div>
+              <div class="req-btn"><a class="btn-insider" href="{% url 'core:report' %}">Report(Insider Trading)</a></div>
+          </div>
+          
+      </div>
+
+      <div class="stock-table">
+            <!--    ----------------- STOCKS TABLE -------------------     -->
+            <div class="table-responsive stockTableInsider">
+              <table class="table table-striped table-sm">
+                
+                <thead>
+                  <th>Stock Name</th>
+                  <th>Number Of Stocks</th>
+                  {% comment %}
+                  <th>Current Price</th>
+                  {% endcomment %}
+                </thead>
+                
+                <tbody>
+
+                  {% comment %} {% for dd in dashdata %}
+                  <tr>
+                    <td>{{ dd.stock }}</td>
+                    <td>{{ dd.numberofstocks }}</td>
+                    <td>{{ dd.priceperstock }}</td>
+                  </tr>
+                  {% endfor %} {% endcomment %} {% for dd in dashdata %}
+                  <tr>
+                    <td>Stock1</td>
+                    <td>{{dd.stock1}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock2</td>
+                    <td>{{dd.stock2}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock3</td>
+                    <td>{{dd.stock3}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock4</td>
+                    <td>{{dd.stock4}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock5</td>
+                    <td>{{dd.stock5}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock6</td>
+                    <td>{{dd.stock6}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock7</td>
+                    <td>{{dd.stock7}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock8</td>
+                    <td>{{dd.stock8}}</td>
+                  </tr>
+                  <tr>
+                    <td>Stock9</td>
+                    <td>{{dd.stock9}}</td>
+                  </tr>
+                  <tr class="lastrow">
+                    <td>Stock10</td>
+                    <td>{{dd.stock10}}</td>
+                  </tr>
+                  {% endfor %}
+
+                  
+                </tbody>
+              </table>
+            </div>
+            
+      </div>
+      
+ </main>
+    
     {% include "footer.html" %}
   </body>
 </html>
