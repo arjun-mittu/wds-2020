@@ -1,16 +1,18 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- <link href="{% static '/css/css/bootstrap.min.css' %}" rel="stylesheet"> -->
-    <link rel="stylesheet" href="{% static 'css/myfile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 
     
     <style>
       body{
-        /* background-image: url("{% static 'images-2019/bg-10.png' %}"); */
+        background-image: url("{% static 'images-2019/bg-10.png' %}");
         
       }
     </style>    
@@ -37,16 +39,17 @@
               <div class="req-btn"><a class="btn-insider" href="{% url 'core:receivedreq' %}">Received Requests</a></div>
               <div class="req-btn"><a class="btn-insider" href="{% url 'core:createrequest' %}">Create Trade Request</a></div>
               <div class="req-btn"><a class="btn-insider" href="{% url 'core:report' %}">Report(Insider Trading)</a></div>
+              <div class="req-btn"><a class="btn-insider" href="{ url 'core:transaction' %}">transaction history</a></div>
           </div>
           
       </div>
 
-      <div class="stock-table">
-            <!--    ----------------- STOCKS TABLE -------------------     -->
-            <div class="table-responsive stockTableInsider">
-              <table class="table table-striped table-sm">
+      <!--    ----------------- STOCKS TABLE -------------------     -->
+        <div class="stock-table">
+            
+              <table class="stockTableInsider">
                 
-                <thead>
+                <thead >
                   <th>Stock Name</th>
                   <th>Number Of Stocks</th>
                   {% comment %}
@@ -57,49 +60,49 @@
                 <tbody>
 
                   {% comment %} {% for dd in dashdata %}
-                  <tr>
+                  <tr class="tablerow1">
                     <td>{{ dd.stock }}</td>
                     <td>{{ dd.numberofstocks }}</td>
                     <td>{{ dd.priceperstock }}</td>
                   </tr>
                   {% endfor %} {% endcomment %} {% for dd in dashdata %}
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock1</td>
                     <td>{{dd.stock1}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock2</td>
                     <td>{{dd.stock2}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock3</td>
                     <td>{{dd.stock3}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock4</td>
                     <td>{{dd.stock4}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock5</td>
                     <td>{{dd.stock5}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock6</td>
                     <td>{{dd.stock6}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock7</td>
                     <td>{{dd.stock7}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock8</td>
                     <td>{{dd.stock8}}</td>
                   </tr>
-                  <tr>
+                  <tr class="tablerow">
                     <td>Stock9</td>
                     <td>{{dd.stock9}}</td>
                   </tr>
-                  <tr class="lastrow">
+                  <tr class="lastrow talberow">
                     <td>Stock10</td>
                     <td>{{dd.stock10}}</td>
                   </tr>
@@ -108,7 +111,7 @@
                   
                 </tbody>
               </table>
-            </div>
+            
             
       </div>
       
