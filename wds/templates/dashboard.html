@@ -23,53 +23,58 @@
 
 body {
   
-    /* background-image: url("{% static '/images-2019/bg-10.png' %}");
+    background-image: url("{% static '/images-2019/bg-10.png' %}");
     background-attachment: fixed; 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;  */
+    background-size: cover;
 
     /* background: linear-gradient(to right, #2A5470, #4C4177); */
-
+  /* background: #fff; */
+  /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
+  /* background-image: linear-gradient(to right, rgb(181, 109, 251), rgb(78, 233, 221)); */
     font: 16px/1.6 Arial, sans-serif; 
-    background: linear-gradient(to left, #393f92 25%, #690077 100%);
-}
-
-.nav-carosel-height{
-   height: 250px;
+    /* background: linear-gradient(to left, #393f92 25%, #690077 100%); */
 }
 
 main{
-
+    /* margin-top: 50px; */
     display: flex;
+    /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
     height: 50rem;
     
 }
 
 /*   ---------------------------    SIDE BAR   -------------------------------- */
 .side-bar-wrapper {
+  margin-top: -20px;
     width: 20%;
     /* background: linear-gradient(to right, #2A5470, #4C4177); */
-    background: white;
-    
-    padding: 0 10px 0 35px;
+    /* background-image: linear-gradient(to right, #501664, #601d71); */
+    /* background: #37474f; */
+    /* background-image: linear-gradient(to bottom, #8c36a9, #209b9e); */
+    background: #000;
+    color: white;
+    padding: 0 10px 0 0px;
 }
 
 /*   ------------------ team info  ------------------ */
 
 .side-bar-wrapper .team-info{
-    padding-left: 3vw;
+    /* padding-left: 3vw; */
 }
 .side-bar-wrapper .team-info .team-name h2{             /*  name size */
     font-size: 2.3rem;
     font-weight: bolder;
     margin-bottom: 25px;
+    color: #fff;
 }
 .side-bar-wrapper .team-info .team-balance h5 {
     font-size: 1.6em;
     font-weight: 600;
-    
+    color: white;
 }
+
 
 
 /*   ------------------ Buttons  ------------------ */
@@ -81,32 +86,25 @@ main{
     /* width: 100%; */
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; */
 }
 .requestButtons .req-btn:hover{
     cursor: pointer;
     text-align: center;
 }
 .requestButtons .req-btn a{
-    width: 100%;
+    /* width: 100%; */
     padding: 15px 10px;
-    background: tomato;
+    color: whitesmoke;
+    /* background: tomato; */
 }
 
 
 /*   ---------------------------    table   -------------------------------- */
 
 
-.stock-table{
-    width: 50%;
-    padding-left: 10vh;
-    margin-left: 10%;
-    padding: 10px;
-    margin-top: -15px;
-    
-}
 /* overriding  */
 th, table tr:nth-of-type(2n){
     border: none;
@@ -119,6 +117,26 @@ th, table tr:nth-of-type(2n) td{
 }
 table{
     background: transparent;
+}
+
+
+.stock-table{
+    width: 60%;
+    /* padding-left: 10vh; */
+    margin-left: 10%;
+    /* padding: 10px; */
+    margin-top: -15px;
+    padding: 0 20vh;
+    /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
+}
+
+.stock-table .table-heading{
+  width: 100%;
+  text-align: center;
+}
+.stock-table .table-heading h1{
+  color: black;
+  font-weight: 500;
 }
 
 
@@ -162,6 +180,7 @@ table{
 }
 
 
+
 @media (max-width: 425px) {
 
     main{
@@ -187,7 +206,8 @@ table{
             <!-- For ZOOM effect add classes "background-image-zoom-out" or "background-image-zoom-in" -->
             <div class="section text-center background-image-zoom-out">
                 <!-- ZOOMED Carousel Image -->
-                <div class="background-image background-image-object" style="background-image:url({% static 'images-2019/bg-6.png'%})"></div>
+                <!-- <div class="background-image background-image-object" style="background-image:url({% static 'images-2019/bg-6.png'%})"></div> -->
+                <div class="background-image background-image-object" ></div>
 
                 <div class="line" style="visibility: hidden;">
                     <hr class="animated-carousel-element break background-primary break-small break-center margin-top-130">
@@ -195,14 +215,14 @@ table{
                         
                     </p>
                     <hr class="animated-carousel-element break background-primary break-small break-center">
-                    <p class="animated-carousel-element slow text-white margin-top-40"></p>
+                    <!-- <p class="animated-carousel-element slow text-white margin-top-40"></p> -->
                 </div>
                 <!-- Pie Charts -->
               
             </div>
         </div>
         <!-- white full width arrow object -->
-        <img class="arrow-object" src="{% static 'img/arrow-object-white.svg'%}" alt="">
+        <!-- <img class="arrow-object" src="{% static 'img/arrow-object-white.svg'%}" alt=""> -->
     </div>
 </div>
 
@@ -234,7 +254,7 @@ table{
         <div class="stock-table">
             
           <div class="table-heading">
-            Stock Holdings
+            <h1>Stock Holdings</h1>
           </div>
               <table class="stockTableInsider">
                 
