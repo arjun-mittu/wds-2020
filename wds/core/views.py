@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from  django.http import HttpResponse, HttpResponseRedirect
 from .forms import RegisterForm,tradeform,requestsellform,tradereqform,reportform
 from django.urls import reverse
-from .models import Stock,trade,stock_list,tradereq,Report
+from .models import Stock,trade,stock_list,tradereq,Report,StockList
 import json
 def home(request):
     return render(request,"home.html", {'messages': messages.get_messages(request)})
@@ -55,6 +55,8 @@ def user_login(request):
                 login(request,user)
         else:
             print("false login")
+            messages.error(request, f'Invalid Teamname or Password')
+            return redirect('core:userlogin')
         return redirect('/')
     else:
         print("render part ran successfully")
@@ -71,7 +73,7 @@ def dashboard(request):
     user_dashdata = Stock.objects.filter(user=request.user)
     dash_dic = {'dashdata':user_dashdata}
     return render(request,'dashboard.html', {'dashdata':user_dashdata})
-
+'''
 posts = [
     {
         'stockname': stock_list[0][0],
@@ -115,10 +117,10 @@ posts = [
     },
 
 ]
-
+'''
 def stock_display(request):
     context = {
-      'posts': posts
+      'posts': StockList.objects.all()
     }
     return render(request,'stocks.html', context)
 
@@ -267,7 +269,7 @@ def reqcreate(request):
                         )
                         return redirect('core:sentreq')
                     else:
-                        messages.warning(request, f'Insufficient Balance for transaction!!')
+                        messages.error(request, f'Insufficient Balance for transaction!!')
                 elif action=='sell':
                     if stock=='stock1':
                         if (numberofstock<=stock_request_sender.stock1):
@@ -281,7 +283,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock2':
                         if (numberofstock<=stock_request_sender.stock2):
                             request_trade=tradereq.objects.create(
@@ -307,7 +309,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock4':
                         if (numberofstock<=stock_request_sender.stock4):
                             request_trade=tradereq.objects.create(
@@ -320,7 +322,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock5':
                         if (numberofstock<=stock_request_sender.stock5):
                             request_trade=tradereq.objects.create(
@@ -333,7 +335,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock6':
                         if (numberofstock<=stock_request_sender.stock6):
                             request_trade=tradereq.objects.create(
@@ -346,7 +348,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock7':
                         if (numberofstock<=stock_request_sender.stock7):
                             request_trade=tradereq.objects.create(
@@ -359,7 +361,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock8':
                         if (numberofstock<=stock_request_sender.stock8):
                             request_trade=tradereq.objects.create(
@@ -372,7 +374,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock9':
                         if (numberofstock<=stock_request_sender.stock9):
                             request_trade=tradereq.objects.create(
@@ -385,7 +387,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')
+                             messages.error(request, f'Insufficient Stock holdings!!')
                     elif stock=='stock10':
                         if (numberofstock<=stock_request_sender.stock10):
                             request_trade=tradereq.objects.create(
@@ -398,7 +400,7 @@ def reqcreate(request):
                             )
                             return redirect('core:sentreq')
                         else:
-                             messages.warning(request, f'Insufficient Stock holdings!!')              
+                             messages.error(request, f'Insufficient Stock holdings!!')              
  
     return render(request,'create_request.html',{'form':tradereqform})
 @login_required
