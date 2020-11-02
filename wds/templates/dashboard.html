@@ -11,7 +11,7 @@
 
     
     <style>
-
+      @import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
       *{
       margin: 0;
       padding: 0;
@@ -31,54 +31,66 @@
   
       /* background: #21668d; */
       /* background: linear-gradient(to top right, #25273a, #262941); */
-      /* background: #343b4d; */
+      background: #343b4d;
       /* background: linear-gradient(45deg, #b835c5, #1c9e9e); */
       /* background: linear-gradient(135deg,  #CC3363, #1f053b); */
-      background: linear-gradient(135deg,  #4b5377 20%, #212646 50%);
+      /* background: linear-gradient(135deg,  #4b5377 20%, #212646 50%); */
       
       font: 16px/1.6 Arial, sans-serif; 
+      font-family: 'Sanchez', serif;
   
+  }
+  footer{
+    margin-top: 40%;
   }
   
   main{
+      margin-top: 10px;
       display: flex;
-      height: 50rem;
+      /* height: 50rem; */
+      /* height: 1000px; */
+
   }
   
   /*   ---------------------------    SIDE BAR   -------------------------------- */
   .side-bar-wrapper {
-      /* margin-top: -20px; */
-      width: 15%;
-      background: #2d99ea;
+      width: 17%;
+      /* background: #2d99ea; */
       color: #FCAF58;
       padding: 0 10px 0 0px;
       border-top-right-radius: 30px;
-      box-shadow: -4px 4px 15px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.5);
+      
   }
   
   /*   ------------------ team info  ------------------ */
   
   .side-bar-wrapper .team-info{
-      background: #212646;
+      /* background: #212646; */
       text-align: center;
       margin: 10px;
       padding: 5px 10px 20px 10px;
       border-radius: 30px;
-      box-shadow: 3px 3px 15px 0 #212646;
+      /* box-shadow: 3px 3px 15px 0 #212646; */
+      box-shadow: 2px 2px 15px 0 #00000f;
+      
+      
   }
   .side-bar-wrapper .team-info .team-name h2{             /*  name size */
       font-size: 2rem;
       font-weight: bolder;
       margin-bottom: 25px;
       color: #FCAF58;
+      font-family: 'Sanchez', serif;
+      text-transform: uppercase;
   }
   .side-bar-wrapper .team-info .team-balance h5 {
-      font-size: 1.2em;
-      font-weight: 600;
+      font-size: 1.1em;
       color: #FCAF58;
-      /* background: black; */
+      line-height: 1.5rem;
       margin: 0 10%;
       text-align: center;
+      font-family: 'Sanchez', serif;
   }
   
   
@@ -94,20 +106,22 @@
   }
   .requestButtons .req-btn  {
     margin-left: 10px;
-    border-bottom: 1.5px solid #0e1214;
+    border-bottom: 1.5px solid #212646;
+    text-align: center;              /* links to center */
   }
   .requestButtons .req-btn:hover{
       cursor: pointer;
-      border-right: 5px solid #212646;
+      text-align: center;               
   }
   .requestButtons .req-btn a{
-      
+    font-size: 0.9rem;
+      text-transform: uppercase;
       padding: 15px 10px;
       color: whitesmoke;
-      
+  
   }
   .requestButtons .req-btn a:hover{
-    text-align: left;
+    text-align: center;           /* links to center on hovering */
   }
   
   /*   ---------------------------    table   -------------------------------- */
@@ -125,16 +139,23 @@
   }
   table{
       background: transparent;
+      height: 1000px;
+      /* background: yellowgreen; */
       /* background: linear-gradient(310deg, #b835c5 50%, #1c9e9e 50%); */
+      
+      
   }
   
   
   .stock-table{
       width: 60%;
       margin-left: 10%;
-      margin-top: -15px;
       /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
+    height: 100vh;
+      margin-bottom: 30px;
+    
   }
+  
   
   .stock-table .table-heading{
     width: 100%;
@@ -143,11 +164,11 @@
   .stock-table .table-heading h1{
     color: #FCAF58;
     font-weight: 500;
+    font-family: 'Sanchez', serif;
   }
   
   
-  .stock-table .stockTableInsider table {
-  
+  .stock-table .stockTableInsider {
   }
   .stock-table .stockTableInsider .talberow{
       background: none;
@@ -214,7 +235,7 @@
             <!-- For ZOOM effect add classes "background-image-zoom-out" or "background-image-zoom-in" -->
             <div class="section text-center background-image-zoom-out">
                 <!-- ZOOMED Carousel Image -->
-                <!-- <div class="background-image background-image-object" style="background-image:url({% static 'images-2019/bg-6.png'%})"></div> -->
+                <div class="background-image background-image-object" style="background-image:url({% static 'images-2019/bg-6.png'%})"></div>
                 <div class="background-image background-image-object" ></div>
 
                 <div class="line" style="visibility: hidden;">
@@ -249,9 +270,9 @@
             </div>
 
             <div class="requestButtons">
-              <div class="req-btn"><a class="btn-insider" href="{% url 'core:sentreq' %}">Requests Sent</a></div>
-              <div class="req-btn"><a class="btn-insider" href="{% url 'core:receivedreq' %}">Received Requests</a></div>
               <div class="req-btn"><a class="btn-insider" href="{% url 'core:createrequest' %}">Create Trade Request</a></div>
+              <div class="req-btn"><a class="btn-insider" href="{% url 'core:sentreq' %}">Requests Sent</a></div>
+              <div class="req-btn"><a class="btn-insider" href="{% url 'core:receivedreq' %}">Requests Received </a></div>
               <div class="req-btn"><a class="btn-insider" href="{% url 'core:report' %}">Report(Insider Trading)</a></div>
               <div class="req-btn"><a class="btn-insider" href="{% url 'core:transaction-history' %}">transaction history</a></div>
           </div>
@@ -275,7 +296,6 @@
                 </thead>
                 
                 <tbody>
-
                   {% comment %} {% for dd in dashdata %}
                   <tr class="tablerow1">
                     <td>{{ dd.stock }}</td>
@@ -323,9 +343,99 @@
                     <td>Stock10</td>
                     <td>{{dd.stock10}}</td>
                   </tr>
+                  <tr class="tablerow">
+                    <td>Stock1</td>
+                    <td>{{dd.stock1}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock2</td>
+                    <td>{{dd.stock2}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock3</td>
+                    <td>{{dd.stock3}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock4</td>
+                    <td>{{dd.stock4}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock5</td>
+                    <td>{{dd.stock5}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock6</td>
+                    <td>{{dd.stock6}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock7</td>
+                    <td>{{dd.stock7}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock8</td>
+                    <td>{{dd.stock8}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock9</td>
+                    <td>{{dd.stock9}}</td>
+                  </tr>
+                  <tr class="lastrow talberow">
+                    <td>Stock10</td>
+                    <td>{{dd.stock10}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock1</td>
+                    <td>{{dd.stock1}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock2</td>
+                    <td>{{dd.stock2}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock3</td>
+                    <td>{{dd.stock3}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock4</td>
+                    <td>{{dd.stock4}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock5</td>
+                    <td>{{dd.stock5}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock6</td>
+                    <td>{{dd.stock6}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock7</td>
+                    <td>{{dd.stock7}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock8</td>
+                    <td>{{dd.stock8}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock9</td>
+                    <td>{{dd.stock9}}</td>
+                  </tr>
+                  <tr class="lastrow talberow">
+                    <td>Stock10</td>
+                    <td>{{dd.stock10}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock8</td>
+                    <td>{{dd.stock8}}</td>
+                  </tr>
+                  <tr class="tablerow">
+                    <td>Stock9</td>
+                    <td>{{dd.stock9}}</td>
+                  </tr>
+                  <tr class="lastrow talberow">
+                    <td>Stock10</td>
+                    <td>{{dd.stock10}}</td>
+                  </tr>
                   {% endfor %}
-
-                  
                 </tbody>
               </table>
             
@@ -334,8 +444,9 @@
       
  </main>
     
+
  {% include "footer.html" %}
-    
+
   </body>
 </html>
 {% endblock content %}
