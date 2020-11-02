@@ -12,183 +12,193 @@
     
     <style>
 
-    *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-      
-}
-
-
-
-body {
-  
-    background-image: url("{% static '/images-2019/bg-10.png' %}");
-    background-attachment: fixed; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    /* background: linear-gradient(to right, #2A5470, #4C4177); */
-  /* background: #fff; */
-  /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
-  /* background-image: linear-gradient(to right, rgb(181, 109, 251), rgb(78, 233, 221)); */
-    font: 16px/1.6 Arial, sans-serif; 
-    background: linear-gradient(135deg, #414A73 30%, #292D47 50%);
-}
-
-main{
-    display: flex;
-    /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
-    height: 50rem;
-    
-}
-
-/*   ---------------------------    SIDE BAR   -------------------------------- */
-.side-bar-wrapper {
-    width: 20%;
-    background: #37474f;
-    color: white;
-    padding: 0 10px 0 0px;
-}
-
-/*   ------------------ team info  ------------------ */
-
-.side-bar-wrapper .team-info{
-    background: #263238;
-}
-.side-bar-wrapper .team-info .team-name h2{             /*  name size */
-    font-size: 2.3rem;
-    font-weight: bolder;
-    margin-bottom: 25px;
-    color: #fff;
-}
-.side-bar-wrapper .team-info .team-balance h5 {
-    font-size: 1.6em;
-    font-weight: 600;
-    color: white;
-}
-
-
-
-/*   ------------------ Buttons  ------------------ */
-.requestButtons{
-    margin-top: 30px;
-}
-.requestButtons .req-btn{
-    margin-bottom: 10px;
-    /* width: 100%; */
-    display: flex;
-    flex-flow: column;
-    /* justify-content: center;
-    align-items: center;
-    text-align: center; */
-}
-.requestButtons .req-btn  {
-  margin-left: 10px;
-  border-bottom: 1.5px solid #0e1214;
-  /* margin-bottom: 20px; */
-}
-.requestButtons .req-btn:hover{
-    cursor: pointer;
-    text-align: center;
-}
-.requestButtons .req-btn a{
-    
-    padding: 15px 10px;
-    color: whitesmoke;
-    
-}
-.requestButtons .req-btn a:hover{
-  text-align: left;
-}
-
-/*   ---------------------------    table   -------------------------------- */
-
-
-/* overriding  */
-th, table tr:nth-of-type(2n){
-    border: none;
-    background: transparent;
-}
-
-th, table tr:nth-of-type(2n) td{
-    border: none;
-    background: transparent;
-}
-table{
-    background: transparent;
-}
-
-
-.stock-table{
-    width: 60%;
-    margin-left: 10%;
-    margin-top: -15px;
-    padding: 0 20vh;
-}
-
-.stock-table .table-heading{
-  width: 100%;
-  text-align: center;
-}
-.stock-table .table-heading h1{
-  color: black;
-  font-weight: 500;
-}
-
-
-.stock-table .stockTableInsider table {
-
-}
-.stock-table .stockTableInsider .talberow{
-    background: none;
-
-}
-.stockTableInsider thead{
-    height: 70px;
-    background: none;
-    border: none;
-    border-bottom: 2px solid #fff;
-    background-image: linear-gradient(to right, #423366d0, #295763d0);
-}
-
-.stockTableInsider thead th{
-    font-size: 2rem;
-    text-align: center;
-    height: 50px;
-    color: white;
-}
-
-.stockTableInsider tbody{
-    background: rgba(128, 128, 128, 0.308);
-    
-}
-
-.stockTableInsider tbody tr{
-    color: white;
-}
-
-.stockTableInsider tbody td{
-    text-align: center;
-    font-size: 1.3rem;
-    margin-right: 1px;
-    padding-right: 10px;
-    color: white;
-}
-
-
-
-@media (max-width: 425px) {
-
-    main{
-        margin-top: 50px;
-        /* display: flexbox; */
-        /* flex-direction: column-reverse; */
+      *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
         
-    }
-}
-    </style>    
+  }
+  
+  
+  
+  body {
+    
+      /* background-image: url("{% static '/images-2019/bg-13.jpeg' %}");
+      background-attachment: fixed; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; */
+  
+      /* background: #21668d; */
+      /* background: linear-gradient(to top right, #25273a, #262941); */
+      /* background: #343b4d; */
+      /* background: linear-gradient(45deg, #b835c5, #1c9e9e); */
+      /* background: linear-gradient(135deg,  #CC3363, #1f053b); */
+      background: linear-gradient(135deg,  #4b5377 20%, #212646 50%);
+      
+      font: 16px/1.6 Arial, sans-serif; 
+  
+  }
+  
+  main{
+      display: flex;
+      height: 50rem;
+  }
+  
+  /*   ---------------------------    SIDE BAR   -------------------------------- */
+  .side-bar-wrapper {
+      /* margin-top: -20px; */
+      width: 15%;
+      background: #2d99ea;
+      color: #FCAF58;
+      padding: 0 10px 0 0px;
+      border-top-right-radius: 30px;
+      box-shadow: -4px 4px 15px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /*   ------------------ team info  ------------------ */
+  
+  .side-bar-wrapper .team-info{
+      background: #212646;
+      text-align: center;
+      margin: 10px;
+      padding: 5px 10px 20px 10px;
+      border-radius: 30px;
+      box-shadow: 3px 3px 15px 0 #212646;
+  }
+  .side-bar-wrapper .team-info .team-name h2{             /*  name size */
+      font-size: 2rem;
+      font-weight: bolder;
+      margin-bottom: 25px;
+      color: #FCAF58;
+  }
+  .side-bar-wrapper .team-info .team-balance h5 {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #FCAF58;
+      /* background: black; */
+      margin: 0 10%;
+      text-align: center;
+  }
+  
+  
+  
+  /*   ------------------ Buttons  ------------------ */
+  .requestButtons{
+      margin-top: 30px;
+  }
+  .requestButtons .req-btn{
+      margin-bottom: 10px;
+      display: flex;
+      flex-flow: column;
+  }
+  .requestButtons .req-btn  {
+    margin-left: 10px;
+    border-bottom: 1.5px solid #0e1214;
+  }
+  .requestButtons .req-btn:hover{
+      cursor: pointer;
+      border-right: 5px solid #212646;
+  }
+  .requestButtons .req-btn a{
+      
+      padding: 15px 10px;
+      color: whitesmoke;
+      
+  }
+  .requestButtons .req-btn a:hover{
+    text-align: left;
+  }
+  
+  /*   ---------------------------    table   -------------------------------- */
+  
+  
+  /* overriding  */
+  th, table tr:nth-of-type(2n){
+      border: none;
+      background: transparent;
+  }
+  
+  th, table tr:nth-of-type(2n) td{
+      border: none;
+      background: transparent;
+  }
+  table{
+      background: transparent;
+      /* background: linear-gradient(310deg, #b835c5 50%, #1c9e9e 50%); */
+  }
+  
+  
+  .stock-table{
+      width: 60%;
+      margin-left: 10%;
+      margin-top: -15px;
+      /* background-image: linear-gradient(135deg, #36096d 0%, #37d5d6 74%); */
+  }
+  
+  .stock-table .table-heading{
+    width: 100%;
+    text-align: center;
+  }
+  .stock-table .table-heading h1{
+    color: #FCAF58;
+    font-weight: 500;
+  }
+  
+  
+  .stock-table .stockTableInsider table {
+  
+  }
+  .stock-table .stockTableInsider .talberow{
+      background: none;
+  
+  }
+  .stockTableInsider thead{
+      height: 70px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid #fff;
+      background-image: linear-gradient(to right, #423366d0, #295763d0);
+  }
+  
+  .stockTableInsider thead th{
+      font-size: 2rem;
+      text-align: center;
+      height: 50px;
+      color: white;
+  }
+  
+  .stockTableInsider tbody{
+      background: rgba(128, 128, 128, 0.308);
+      
+  }
+  
+  .stockTableInsider tbody tr{
+      color: white;
+      /* border-bottom: 1px solid #0e1214; */
+  }
+  
+  .stockTableInsider tbody td{
+      text-align: center;
+      font-size: 1.3rem;
+      margin-right: 1px;
+      padding-right: 10px;
+      color: white;
+  }
+  
+  
+  
+  
+  @media (max-width: 425px) {
+  
+      main{
+          margin-top: 50px;
+          /* display: flexbox; */
+          /* flex-direction: column-reverse; */
+          
+      }
+  }
+      </style>    
   </head>
   <body>
 
