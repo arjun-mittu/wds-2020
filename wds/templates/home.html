@@ -2,6 +2,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<head>
+    <style>
+        .para{
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    
+    color:white;
+}
+.head{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+.portion{
+    background-color: black;
+}
+.h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+    </style>
+</head>
 <body>
 <header role="banner" class="position-absolute">
     <!-- Top Navigation -->
@@ -14,8 +33,10 @@
     <div class="line">
         <h1 class="head text text-size-50 text-m-size-40">
         Welcome to <b>WDS</b></h1>
-        <p class="para text-size-20">Humans have come very far in their knowledge of money. From the barter system to the stock market, from copper tokens to printed notes, we have covered quite a journey. 
-            For all the zealous participants out there, The Econ Club releases the teaser for their annual flagship event "Wolf of Dalal Street". Brush up your knowledge about domestic and international markets, and get ready to tackle the bull and the bear. Turn your losses into profits with your prudence and prove to the world that money indeed grows on trees!</p>
+        <p class="para text-size-20">Professional stock investing, with its sharp ups and downs, can teach us a lot about life.<br><br>
+            Money brings out the insecurity, fear and irrationality that we might otherwise keep hidden in polite society. Investing isn’t just a test of strategy– it’s a test of character, and what we do when investing is very often what we believe about ourselves.<br><br>
+            Through this simulation of the stock market, you will learn how to analyze stocks, look for patterns that are in everyone's sight but observed by a few and then exploit it to optimise your profit and loss. <br>
+            </p>
             
         {% if user.is_authenticated %}
         <a href="{% url 'core:dashboard' %}" class="s-12 m-6 l-3 center button border-radius background-purple text-size-20 margin-top-60 text-white">Enter WDS</a>
@@ -42,8 +63,8 @@
             Stock Market</h2>
             <h2 class="text-size-30 text-white">
                 What you will Gain from this event??</h2>
-            <p class="margin-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-                nisl ut aliquip ex ea commodo consequat.</p>
+            <p class="margin-bottom">You will learn how to convince others of why they should give what they have to you and take what you have for them, in simple words trade. But to change ones perspective on what you have to offer and mould it as per your opinions is like having an impact so huge and influencing power so strong that you really get to the other person. <br><br>
+                Remember before selling or buying you have to sell your idea and vision to people around to really get around things the way you believe to be ideal.</p>
             
             <!-- white Start your Business object -->
             <!--<img class="margin-left-20 margin-top-30 margin-bottom-60" src="img/start-your-business.svg" alt="">-->
