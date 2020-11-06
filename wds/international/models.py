@@ -37,13 +37,13 @@ action_list=(
     ('sell','sell')
 )
 
-class LoggedInUserInternational(models.Model):
+'''class LoggedInUserInternational(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="logged_in_user_international", on_delete=models.CASCADE)
     session_key = models.CharField(max_length=32, blank=True, null=True)
 
     def __str__(self):
         return self.user.username
-
+'''
 class StockList(models.Model):
     stockattribute = models.CharField(max_length=20)
     stockname = models.CharField(max_length=100)
@@ -99,7 +99,7 @@ class tradereq(models.Model):
     status=models.CharField(choices=status_list,max_length=50,default='pending')
     stock=models.CharField(choices=stock_list,max_length=100)
     numberofstocks=models.IntegerField(default=0)
-    priceperstock=models.FloatField(null=True, blank=False)
+    priceperstock=models.FloatField(null=True, blank=False, default=0)
     is_active= models.BooleanField(blank=False, null=False, default=True)
     
     def __str__(self):
