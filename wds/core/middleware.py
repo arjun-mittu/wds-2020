@@ -1,5 +1,5 @@
 from django.contrib.sessions.models import Session
-
+from django.contrib import messages
 class OneSessionPerUserMiddleware:
     # Called only once when the web server starts
     def __init__(self, get_response):
@@ -16,7 +16,7 @@ class OneSessionPerUserMiddleware:
             # session_key with from the Session table
             if stored_session_key and stored_session_key != request.session.session_key:
                 Session.objects.get(session_key=stored_session_key).delete()
-
+                messages.error(request, f'Your teammate was already logged in with similar credentials(He/She has been logged out) Contact them to sort the matter!')
             request.user.logged_in_user.session_key = request.session.session_key
             request.user.logged_in_user.save()
 

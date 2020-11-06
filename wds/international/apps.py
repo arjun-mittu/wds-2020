@@ -5,4 +5,4 @@ class CoreConfig(AppConfig):
     name = 'international'
 
     def ready(self):
-            import international.signals
+        import international.signals
