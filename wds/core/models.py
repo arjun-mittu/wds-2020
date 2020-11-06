@@ -84,7 +84,7 @@ class trade(models.Model):
     seller=models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     stock=models.CharField(choices=stock_list,max_length=100)
     numberofstocks=models.IntegerField(default=0)
-    priceperstock=models.FloatField(null=True, blank=True)
+    priceperstock=models.FloatField(null=True, blank=True, default=0.0)
     buyer=models.ForeignKey(settings.AUTH_USER_MODEL,related_name='buyer_of_stock', on_delete=models.CASCADE)
     #userbalance=models.FloatField(default=1000000.0)
     
