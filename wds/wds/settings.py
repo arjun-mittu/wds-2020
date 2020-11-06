@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'core',
-    'international',
+    'core.apps.CoreConfig',
+    'international.apps.CoreConfig',
     'tradingclosed',
     'materializecssform',
     
@@ -54,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'core.middleware.OneSessionPerUserMiddleware',
+    #'international.middleware.OneSessionPerUserMiddlewareInternational',
 ]
 
 ROOT_URLCONF = 'wds.urls'
