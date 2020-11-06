@@ -37,6 +37,13 @@ action_list=(
     ('sell','sell')
 )
 
+class LoggedInUserInternational(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="logged_in_user_international", on_delete=models.CASCADE)
+    session_key = models.CharField(max_length=32, blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username
+
 class StockList(models.Model):
     stockattribute = models.CharField(max_length=20)
     stockname = models.CharField(max_length=100)
@@ -103,7 +110,7 @@ class tradereq(models.Model):
         amount=self.numberofstocks*self.priceperstock
         if self.action=='buy':
             sender_stock.userbalance=sender_stock.userbalance-amount
-            receiver_stock.userbalance=receiver_stock.userbalance+amount
+            receiver_stock.userbalance=receiver_stock.userbalance+(amount*0.97)
             if self.stock=='JPM':
                 if (receiver_stock.JPM>=self.numberofstocks):
                     if(sender_stock.userbalance>=amount):
@@ -280,7 +287,7 @@ class tradereq(models.Model):
             if (amount<=sender_stock.userbalance):
                 
                 sender_stock.userbalance=sender_stock.userbalance-amount
-                receiver_stock.userbalance=receiver_stock.userbalance+amount
+                receiver_stock.userbalance=receiver_stock.userbalance+(amount*0.97)
                 if self.stock=='JPM':
                     if(receiver_stock.JPM>=self.numberofstocks):
                         sender_stock.JPM=sender_stock.JPM+self.numberofstocks
