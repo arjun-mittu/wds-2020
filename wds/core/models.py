@@ -104,7 +104,7 @@ class tradereq(models.Model):
     status=models.CharField(choices=status_list,max_length=50,default='pending')
     stock=models.CharField(choices=stock_list,max_length=100)
     numberofstocks=models.IntegerField(default=0)
-    priceperstock=models.FloatField(null=True, blank=False)
+    priceperstock=models.FloatField(null=True, blank=False, default=0)
     is_active= models.BooleanField(blank=False, null=False, default=True)
     
     def __str__(self):

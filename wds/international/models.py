@@ -79,7 +79,7 @@ class trade(models.Model):
     seller=models.ForeignKey(settings.AUTH_USER_MODEL, related_name='seller_of_stock_international',on_delete=models.CASCADE)
     stock=models.CharField(choices=stock_list,max_length=100)
     numberofstocks=models.IntegerField(default=0)
-    priceperstock=models.FloatField(null=True, blank=True, default=0.0)
+    priceperstock=models.FloatField(null=True, blank=True)
     buyer=models.ForeignKey(settings.AUTH_USER_MODEL,related_name='buyer_of_stock_international', on_delete=models.CASCADE)
     #userbalance=models.FloatField(default=1000000.0)
     
@@ -99,7 +99,7 @@ class tradereq(models.Model):
     status=models.CharField(choices=status_list,max_length=50,default='pending')
     stock=models.CharField(choices=stock_list,max_length=100)
     numberofstocks=models.IntegerField(default=0)
-    priceperstock=models.FloatField(null=True, blank=False)
+    priceperstock=models.FloatField(null=True, blank=False, default=0)
     is_active= models.BooleanField(blank=False, null=False, default=True)
     
     def __str__(self):
